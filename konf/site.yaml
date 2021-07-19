@@ -8,6 +8,12 @@ env:
       key: maintenance
       name: charmhub
 
+  - name: CHARMSTORE_API_URL
+    value: https://api.staging.charmhub.io/
+
+  - name: CHARMSTORE_PUBLISHER_API_URL
+    value: https://api.staging.charmhub.io/
+
   - name: SENTRY_DSN
     value: https://6cacb25de947478faeb57f3836da1cf3@sentry.is.canonical.com//24
 
