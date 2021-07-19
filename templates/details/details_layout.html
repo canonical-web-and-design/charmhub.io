@@ -40,8 +40,15 @@
 
 {% block page_scripts %}
   <script src="{{ versioned_static('js/dist/details.js') }}" defer></script>
+  <script src="{{ versioned_static('js/dist/highlight-js.js') }}" defer></script>
   <script>
     window.addEventListener("DOMContentLoaded", function () {
+      var codeblocks = Array.prototype.slice.call(document.querySelectorAll("pre"));
+
+      codeblocks.forEach(function(block) {
+        charmhub.highlight.hljs.highlightBlock(block.querySelector("code"));
+      });
+
       charmhub.details.init("{{ package.name }}");
     });
   </script>
